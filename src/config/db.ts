@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 export const connectDB = async () => {
 
     try {
-        const url = 'mongodb+srv://root:BybxsnrFPQciUrD7@cluster0.ctg6a.mongodb.net/linktree_node_typescript'
-        const { connection } = await mongoose.connect(url)
+        
+        const { connection } = await mongoose.connect(process.env.MONGO_URI)
 
         const url2 = `${connection.host}:${connection.port}`
         
