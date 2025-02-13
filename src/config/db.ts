@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import colors from 'colors'
 
 export const connectDB = async () => {
 
@@ -9,10 +10,10 @@ export const connectDB = async () => {
         const url = `${connection.host}:${connection.port}`
         
         
-        console.log(`MongoDB Conectado en: ${url}`);
+        console.log(colors.blue.bold(`MongoDB Conectado en: ${url}`));
         
     } catch (error) {
-        console.log(error.message);
+        console.log(colors.bgYellow.red.italic(error.message));
         process.exit(1)
         
     }
