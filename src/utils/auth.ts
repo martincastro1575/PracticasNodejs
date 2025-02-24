@@ -5,3 +5,10 @@ export const hashPassword = async(password: string)=>{
 
     return await bcrypt.hash(password,salt)
 }
+
+export const checkPass = async(inpassword:string, hash:string)=>{
+
+    return await bcrypt.compare(inpassword,hash)
+    
+    
+}
