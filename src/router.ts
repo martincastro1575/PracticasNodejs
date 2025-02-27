@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { body } from 'express-validator'
 import { createAccount, login } from './handlers';
+import { handleInputErros } from './middlewares/validation';
+
 
 const router = Router()
 
@@ -23,7 +25,7 @@ router.post('/auth/register',
     .isLength({min:8})
     .withMessage('EL password, minimo debe ser de 8 caracteres')
 
-    ,createAccount)
+    ,handleInputErros,createAccount)
 
  router.post('/auth/login',
     body('email')
@@ -32,6 +34,7 @@ router.post('/auth/register',
     body('password')
     .notEmpty()
     .withMessage('El password es requerido'),
+    handleInputErros,
     login
  )   
 

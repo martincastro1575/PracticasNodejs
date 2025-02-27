@@ -2,6 +2,7 @@
 node_modules/
 package-lock.json
 dist
-Anotaciones.txt
+AnotacionesParaBackend.txt
+AnotacionesParaFrontend.txt
 db copy.ts
 .env copy
