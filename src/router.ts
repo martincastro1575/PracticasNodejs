@@ -6,7 +6,7 @@ import { handleInputErros } from './middlewares/validation';
 
 const router = Router()
 
-//Autenticacion y registro de usuario
+//Autenticacion y registro de usuario 
 router.post('/auth/register', 
     
     body('handle')
